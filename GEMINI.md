@@ -28,4 +28,5 @@ src
 
 ## Technical requirements
 
-
+- Register at [Marvel Developer Portal](https://developer.marvel.com/) to retrieve an API key for accessing the Marvel Comics API.
+- Add [Tailwind CSS](https://tailwindcss.com/) to the project for styling the application.
