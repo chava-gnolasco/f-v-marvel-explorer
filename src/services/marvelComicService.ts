@@ -34,7 +34,7 @@ const axiosClient = axios.create({
  * or `undefined` if the request fails.
  * @throws Throws an error if the request fails.
  */
-export const retrieveComics = async (): Promise<MarvelComicsResponse | undefined> => {
+export const getComics = async (): Promise<MarvelComicsResponse | undefined> => {
     const ts = Date.now().toString();
     return axiosClient.get('/comics', {
         params: {
