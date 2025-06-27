@@ -30,3 +30,20 @@ src
 
 - Register at [Marvel Developer Portal](https://developer.marvel.com/) to retrieve an API key for accessing the Marvel Comics API.
 - Add [Tailwind CSS](https://tailwindcss.com/) to the project for styling the application.
+
+
+## Public API key
+
+The public and private variables are set on .env environment variables. You can create a .env file in the root of the project and add the following variables:
+
+- VITE_APP_MARVEL_PUBLIC_API_KEY
+- VITE_APP_MARVEL_PRIVATE_API_KEY
+
+## Authentication for Server-Side Applications
+
+Server-side applications must pass two parameters in addition to the apikey parameter:
+
+ts - a timestamp (or other long string which can change on a request-by-request basis)
+hash - a md5 digest of the ts parameter, your private key and your public key (e.g. md5(ts+privateKey+publicKey)
+For example, a user with a public key of "1234" and a private key of "abcd" could construct a valid call as follows: http://gateway.marvel.com/v1/public/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150 (the hash value is the md5 digest of 1abcd1234)
+
